@@ -13,8 +13,12 @@ const articleSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
+    imageUrl: {
+        type: String,
+        default: "", // Opcional, puede quedar vacío
+    },
 }, {
-    timestamps: true, // 👈 ESTO ES LO IMPORTANTE
+    timestamps: true, // para crear campos createdAt y updatedAt automáticamente
 });
 
 const Article = mongoose.model("Article", articleSchema);
